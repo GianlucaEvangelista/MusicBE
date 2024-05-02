@@ -23,7 +23,8 @@ public class Song {
         this.year = year;
     }
 
-    public Song() {}
+    public Song() {
+    }
 
     public Integer getId() {
         return id;

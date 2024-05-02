@@ -1,6 +1,7 @@
 package music.persistence;
 
 import music.app.model.Song;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +24,10 @@ public class SongService {
     public Optional<List<Song>> getAllSongs() {
         List<SongEntity> songEntities = songRepository.findAll();
         List<Song> songs = new ArrayList<>();
-        if(songEntities.isEmpty()) {
+        if (songEntities.isEmpty()) {
             return Optional.empty();
         }
-        for(SongEntity s : songEntities) {
+        for (SongEntity s : songEntities) {
             songs.add(songMapper.toSong(s));
         }
         return Optional.of(songs);
@@ -40,5 +41,4 @@ public class SongService {
     public void deleteSong(Integer id) {
         songRepository.deleteById(id);
     }
-
 }

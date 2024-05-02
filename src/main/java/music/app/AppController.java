@@ -2,6 +2,7 @@ package music.app;
 
 import music.app.model.Song;
 import music.persistence.SongService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,7 @@ public class AppController {
     public void startApp() {
         Optional<List<Song>> optionalSongs = songService.getAllSongs();
         List<Song> songs = optionalSongs.orElse(new ArrayList<>());
-        for(Song s : songs) {
+        for (Song s : songs) {
             System.out.println(s.getTitle() + ", " + s.getArtist() + ", " + s.getGenre() + ", " + s.getAlbum() + ", " + s.getYear());
         }
     }

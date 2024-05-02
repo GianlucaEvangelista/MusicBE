@@ -2,6 +2,7 @@ package music;
 
 import music.app.AppController;
 import music.confing.AppConfiguration;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
