@@ -1,5 +1,7 @@
 package music.app.controller;
 
+import lombok.Getter;
+
 import music.app.model.Song;
 import music.persistence.SongService;
 
@@ -14,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/songs")
+@Getter
 public class SongController {
 
     private final SongService songService;
@@ -44,9 +47,5 @@ public class SongController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-    }
-
-    public SongService getSongService() {
-        return songService;
     }
 }

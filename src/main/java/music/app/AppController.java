@@ -1,5 +1,7 @@
 package music.app;
 
+import lombok.Getter;
+
 import music.app.model.Song;
 import music.persistence.SongService;
 
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
+@Getter
 public class AppController {
 
     private final SongService songService;
@@ -26,9 +29,5 @@ public class AppController {
         for (Song s : songs) {
             System.out.println(s.getTitle() + ", " + s.getArtist() + ", " + s.getGenre() + ", " + s.getAlbum() + ", " + s.getYear());
         }
-    }
-
-    public SongService getSongService() {
-        return songService;
     }
 }
