@@ -36,4 +36,9 @@ public class SongService {
         SongEntity songEntity = songMapper.toSongEntity(song);
         return songMapper.toSong(songRepository.save(songEntity));
     }
+
+    public void deleteSong(Integer id) {
+        songRepository.deleteById(id);
+    }
+
 }
