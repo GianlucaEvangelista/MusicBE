@@ -1,14 +1,7 @@
-FROM postgres
+FROM openjdk:latest
 
-LABEL author="Gianluca Evangelista"
-LABEL description="Container image for Music application"
-LABEL version="1.0.0"
+WORKDIR /app
 
-ENV POSTGRES_USER root
-ENV POSTGRES_PASSWORD rootpassword
-ENV POSTGRES_DB musicDB
+COPY target/music.be-1.0-SNAPSHOT.jar music.be-1.0-SNAPSHOT.jar
 
-COPY src/sql/init.sql /docker-entrypoint-initdb.d/
-COPY src/sql/insert.sql /docker-entrypoint-initdb.d/
-
-EXPOSE 5432
+ENTRYPOINT ["java","-jar","/app/music.be-1.0-SNAPSHOT.jar"]
