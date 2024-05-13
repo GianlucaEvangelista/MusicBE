@@ -1,4 +1,4 @@
-package music.confing;
+package music.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
